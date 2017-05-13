@@ -1,0 +1,12 @@
+<% if current_user.admin %>
+  <%= link_to "New Attraction", new_attraction_path %>
+<% end %>
+<% if current_user.admin %>
+  <ul>
+    <li><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></li>
+  </ul>
+<% else %>
+  <ul>
+    <li><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></li>
+  </ul>
+<% end %>
